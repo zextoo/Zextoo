@@ -1,446 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
-  document.onkeydown = function(e) {
-    if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
-      return false;
-    }
-  }
-</script>
-
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zextoo Games</title>
-  <meta name="description" content="Play free online games at Zextoo. Enjoy car racing, sniper challenges, stack tower games and more. No download needed!">
-  <link rel="icon" href="images/zextoo_logo_short.jpg" type="image/jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5869292715438632" crossorigin="anonymous"></script>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextoo Games - Home</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-  <style>/* Navbar Styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: #111;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-.logo-title {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
-}
-
-.site-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links a {
-  margin-left: 25px;
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #00ffcc;
-}
-
-.home-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-}
-
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    * {
+  <!-- Style -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-image: url('https://images.openai.com/thumbnails/7be14f5dc007f0458e558fcfe73596d8.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
+      background-color: #f9f9f9;
     }
 
     header {
-      background-color: #1f1f1f;
-      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
       display: flex;
       align-items: center;
-      border-bottom: 2px solid #333;
+      justify-content: space-between;
     }
 
     .logo-title {
       display: flex;
       align-items: center;
-      gap: 15px;
-      font-size: 1.8em;
-      font-weight: 600;
-      color: white;
-      text-decoration: none;
     }
 
     .logo-title img {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
+      height: 50px;
+      margin-right: 10px;
     }
 
-    .container {
-      padding: 20px;
+    .logo-title a {
+      text-decoration: none;
+      color: #000;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    nav a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      color: #000;
+      margin-left: 20px;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .games-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-top: 30px;
+      padding: 0 20px;
     }
 
     .game-card {
-      background: #1e1e1e;
+      background-color: #fff;
       padding: 15px;
-      border-radius: 12px;
-      transition: 0.3s;
-    }
-
-    .game-card:hover {
-      transform: scale(1.05);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .game-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
+      max-width: 100%;
       border-radius: 8px;
     }
 
     .game-card h3 {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-
-    .game-card a {
-      display: inline-block;
-      margin-top: 8px;
-      color: #00e676;
-      text-decoration: none;
-      cursor: pointer;
+      margin: 10px 0 5px;
     }
 
     footer {
-      text-align: center;
+      margin-top: 50px;
       padding: 20px;
-      color: #777;
-      border-top: 2px solid #333;
+      text-align: center;
+      background-color: #eee;
     }
-
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-
-  .modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 1000px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  .modal-content iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-    cursor: pointer;
-    z-index: 1000;
-  }
-
-  .close-btn:hover {
-    color: darkred;
-  }
-</style>
-
- 
+  </style>
 </head>
 <body>
-<header class="navbar">
-  <div class="logo-title">
-    <a href="index.html" class="home-link">
-      <img src="images/zextoo_logo_short.jpg" alt="ZEXTOO Logo" class="logo">
-      <span class="site-title">ZEXTOO Games</span>
-    </a>
-  </div>
-  <nav>
-    nav {
-  font-family: 'Poppins', sans-serif;
-}
 
-  <a href="index.html">Home</a>
-  <a href="categories.html">Categories</a>
-  <a href="top-games.html">Top Games</a>
-  <a href="submit.html">Submit Game</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-</header>
-
-
-  <div class="container">
-    <!-- Game Cards -->
-    <div class="game-card">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632/98ee46100842133.5f117da0781a8.jpg" alt="Car Racing">
-      <h3>Car Racing</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/6mpmshr3a56tp1x01u87xfj3i330ucdy/')">Play Now</a>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="logo-title">
+      <a href="index.html">
+        <img src="images/zextoo_logo_short.jpg" alt="ZEXTOO Logo">
+      </a>
+      <a href="index.html">Zextoo Games</a>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="top-games.html">Top Games</a>
+      <a href="submit.html">Submit Game</a>
+      <a href="search.html">Search</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <div class="game-card">
-      <img src="https://uncached.gamemonetize.co/rdij6lpwivwkq1cfebpbyt6kc00fh6hi/@base/banner.jpg" alt="Sniper Mission">
-      <h3>Space survival</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/rdij6lpwivwkq1cfebpbyt6kc00fh6hi/')">Play Now</a>
+  <!-- Main Content -->
+  <main>
+    <h1>🎮 Welcome to Zextoo Games</h1>
+    <p>Play free online games across action, racing, puzzle, and more categories!</p>
+
+    <div class="games-grid">
+      <div class="game-card">
+        <a href="racing.html"><img src="images/driftboss.jpg" alt="Drift Boss"></a>
+        <h3>Drift Boss</h3>
+      </div>
+      <div class="game-card">
+        <a href="action.html"><img src="images/streetfight.jpg" alt="Street Fight"></a>
+        <h3>Street Fight</h3>
+      </div>
+      <div class="game-card">
+        <a href="puzzle.html"><img src="images/blockpuzzle.jpg" alt="Block Puzzle"></a>
+        <h3>Block Puzzle</h3>
+      </div>
+      <div class="game-card">
+        <a href="adventure.html"><img src="images/junglerun.jpg" alt="Jungle Run"></a>
+        <h3>Jungle Run</h3>
+      </div>
     </div>
+  </main>
 
-    <div class="game-card">
-      <img src="https://play-lh.googleusercontent.com/F29K9Yt4wOSQPgF32udTa4vul-WJjd-4InH1cYoLBU-GadLe1irGNBJPLbstqCDSJQo=w526-h296-rw" alt="Squid Game Challenge">
-      <h3>Squid Game Challenge</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/w64b9ot0zjhjxx7xxzxd3gjxvczgx4b9/')">Play Now</a>
-    </div>
-
-    <div class="game-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlRB7r-KZL9AvcHcWFUZee3e1jdHi_KPqjnQ&s" alt="Backflip Master">
-      <h3>Domino Online</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/cesnlh8sq40hoqm7t79vz7xnb1mzvnbx/')">Play Now</a>
-    </div>
-
-    <div class="game-card">
-      <img src="https://imgs.crazygames.com/tanks-3d_16x9/20250605035917/tanks-3d_16x9-cover?metadata=none&quality=40&width=412" alt="Tank Master">
-      <h3>Tank Master</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/r50sosv94qp15bkjhze2givwy8z5bsuu/')">Play Now</a>
-    </div>
-<div class="game-card">
-      <img src="https://img.gamemonetize.com/py3zv9ry8am8vezvg2od9cfk9uzoe94n/512x384.jpg" alt="Tank Master">
-      <h3>Galaxy Brick Breaker</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/py3zv9ry8am8vezvg2od9cfk9uzoe94n/')">Play Now</a>
-    </div>
-<div class="game-card">
-      <img src="https://img.gamemonetize.com/3qo6bwp6aea8pj4ntuulxtyqsszn30ns/512x384.jpg" alt="Tank Master">
-      <h3>Moto Attac</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/3qo6bwp6aea8pj4ntuulxtyqsszn30ns/')">Play Now</a>
-    </div>
-
-    <div class="game-card">
-      <img src="https://thiefpuzzle.io/cache/data/image/game/thief-puzzle-f200x200.webp" alt="Tank Master">
-      <h3>Thief Puzzle</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/2mb4bxmkp1l8xg3j6ebc58w1n960rc99/')">Play Now</a>
-    </div>
-    <div class="game-card">
-      <img src="https://img.gamedistribution.com/476d3f47d44f4a4d8553c294e635cc1a-512x384.jpg" alt="Tank Master">
-      <h3>Hero Transform Race</h3>
-      <a onclick="openGame('https://html5.gamedistribution.com/476d3f47d44f4a4d8553c294e635cc1a/?gd_sdk_referrer_url=https://gamedistribution.com/games/hero-transform-race/')">Play Now</a>
-    </div>
-    <div class="game-card">
-      <img src="https://img.gamedistribution.com/116e0e450a374f24877fa02ad98a2e62-512x384.jpg" alt="Tank Master">
-      <h3>Football Rush 3D</h3>
-      <a onclick="openGame('https://html5.gamedistribution.com/116e0e450a374f24877fa02ad98a2e62/?gd_sdk_referrer_url=https://gamedistribution.com/games/football-rush-3d/')">Play Now</a>
-    </div>
-    <div class="game-card">
-      <img src="https://img.gamedistribution.com/904bc37384d64d90bd310319fee5d0db-512x384.jpg" alt="Tank Master">
-      <h3>Happy block</h3>
-      <a onclick="openGame('https://html5.gamedistribution.com/904bc37384d64d90bd310319fee5d0db/?gd_sdk_referrer_url=https://gamedistribution.com/games/happy-blocks-1/')">Play Now</a>
-    </div>
-    <div class="game-card">
-      <img src="https://img.gamedistribution.com/ad3bc5a5550640a5ac89d197fb153d61-512x384.jpg" alt="Tank Master">
-      <h3>Baseball Basher/h3>
-      <a onclick="openGame('https://html5.gamedistribution.com/ad3bc5a5550640a5ac89d197fb153d61/?gd_sdk_referrer_url=https://gamedistribution.com/games/homerun-derby/')">Play Now</a>
-    </div>
-    <div class="game-card">
-  <img src="https://img.gamedistribution.com/f4f89b046c8f4fee98b01414f1e60c18-512x512.jpg" alt="Block Blast">
-  <h3>Block Blast</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/3a364ed8d075418abb7849e1d63b6015/?gd_sdk_referrer_url=https://gamedistribution.com/games/block-blast-1/')">Play Now</a>
-</div>
-<div class="game-card">
-  <img src="https://img.gamedistribution.com/f4f89b046c8f4fee98b01414f1e60c18-512x512.jpg" alt="Fruit Master">
-  <h3>Fruit Master</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/1ca5c64c80f44f70bfe7a4f3519f90ee/?gd_sdk_referrer_url=https://gamedistribution.com/games/fruit-master/')">Play Now</a>
-</div>
-<div class="game-card">
-  <img src="https://img.gamedistribution.com/1377b99c10284c229423118a941af3b1-512x512.jpeg" alt="OvO">
-  <h3>OvO</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/1377b99c10284c229423118a941af3b1/?gd_sdk_referrer_url=https://gamedistribution.com/games/ovo/')">Play Now</a>
-</div>
-<div class="game-card">
-  <img src="https://img.gamedistribution.com/ec147555caf047899e02c433fc467f55-512x512.jpg" alt="Rodha">
-  <h3>Rodha</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/ec147555caf047899e02c433fc467f55/?gd_sdk_referrer_url=https://gamedistribution.com/games/rodha/')">Play Now</a>
-</div>
-<div class="game-card">
-  <img src="https://img.gamedistribution.com/snail-bob-1-512x384.jpg" alt="Snail Bob 1">
-  <h3>Snail Bob 1</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/b115976d62a64cff8ca1cee6c971d61c/')">Play Now</a>
-</div>
-<div class="game-card">
-  <img src="https://img.gamedistribution.com/only-up-512x384.jpg" alt="Only Up">
-  <h3>Only Up</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/ec5a0aa39f5c4cd19d1e6153de22650d/?gd_sdk_referrer_url=https://gamedistribution.com/games/only-up/')">Play Now</a>
-</div>
-
-    <div class="game-card">
-  <img src="https://img.gamedistribution.com/bob-the-robber-512x384.jpg" alt="Bob The Robber">
-  <h3>Bob The Robber</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/18d28481ea514f3c838f9a5a355fb0f7/')">Play Now</a>
-</div>
-
-    <div class="game-card">
-  <img src="https://img.gamedistribution.com/poker-with-friends-512x384.jpg" alt="Poker With Friends">
-  <h3>Poker With Friends</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/80cf8e94d5af458e822afc6c9f5766e0/?gd_sdk_referrer_url=https://gamedistribution.com/games/poker-with-friends/')">Play Now</a>
-</div>
-
-    <div class="game-card">
-  <img src="https://img.gamedistribution.com/vex-7-512x384.jpg" alt="Vex 7">
-  <h3>Vex 7</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/0c454c9562d249d28ba3a2b50564042c/')">Play Now</a>
-</div>
-
-    <div class="game-card">
-  <img src="https://img.gamedistribution.com/pou-512x384.jpg" alt="Pou">
-  <h3>Pou</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/d1362abc246f43bdb5c26643aec2b61b/)">Play Now</a>
-</div>
-
-    <div class="game-card">
-  <img src="https://img.gamedistribution.com/infinite-craft-512x384.jpg" alt="Infinite Craft">
-  <h3>Infinite Craft</h3>
-  <a onclick="openGame('https://html5.gamedistribution.com/4d455d6cdff443b5855ee472dff23f8c/?gd_sdk_referrer_url=https://gamedistribution.com/games/infinite-craft/')">Play Now</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <div class="game-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnMbm-sGYK4m3_V90DM3rCRwKAoiPL6_XX2A&s" alt="Super Mario">
-      <h3>Super Mario</h3>
-      <a onclick="openGame('https://html5.gamemonetize.co/sly30piwilci61j7pc5x8n36cdu9n19f/')">Play Now</a>
-    </div>
-  </div>
-  <nav>
-
-
-
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Zextoo Games. All rights reserved to Arjun Pandey.
+    &copy; 2025 Zextoo. All rights reserved.
   </footer>
 
-  <div class="modal" id="gameModal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeGame()">&times;</span>
-      <iframe id="gameFrame" src=""></iframe>
-    </div>
-  </div>
-
-  <script>
-    function openGame(url) {
-      document.getElementById('gameFrame').src = url;
-      document.getElementById('gameModal').style.display = 'flex';
-    }
-    function closeGame() {
-      document.getElementById('gameModal').style.display = 'none';
-      document.getElementById('gameFrame').src = '';
-    }
-  </script>
-
-  <div id="cookieConsent" style="position: fixed; bottom: 0; width: 100%; background: #222; color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
-    This website uses cookies and similar technologies to ensure you get the best experience. By using our site, you agree to our <a href="/privacy.html" style="color: #4CAF50;">Privacy Policy</a>.
-    <button onclick="acceptCookies()" style="margin-left: 10px; padding: 6px 12px; background-color: #4CAF50; border: none; color: white; border-radius: 4px; cursor: pointer;">Got it!</button>
-  </div>
-
-  <script>
-    function acceptCookies() {
-      localStorage.setItem("cookieAccepted", "true");
-      document.getElementById("cookieConsent").style.display = "none";
-    }
-
-    window.onload = function () {
-      if (!localStorage.getItem("cookieAccepted")) {
-        document.getElementById("cookieConsent").style.display = "block";
-      }
-    };
-  </script>
 </body>
 </html>
