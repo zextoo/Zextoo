@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Games - Zextoo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    function searchGames() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const games = document.querySelectorAll('.game-item');
+
+      games.forEach(game => {
+        const name = game.textContent.toLowerCase();
+        game.style.display = name.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Search Games</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="top-games.html">Top Games</a>
+      <a href="submit.html">Submit Game</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>🔎 Find a Game</h2>
+    <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search games..." />
+
+    <div class="game-list">
+      <div class="game-item"><a href="action.html">Street Fight</a></div>
+      <div class="game-item"><a href="puzzle.html">Block Puzzle</a></div>
+      <div class="game-item"><a href="racing.html">Drift Boss</a></div>
+      <div class="game-item"><a href="adventure.html">Jungle Run</a></div>
+      <div class="game-item"><a href="kids.html">Coloring Book</a></div>
+    </div>
+  </main>
+</body>
+</html>
