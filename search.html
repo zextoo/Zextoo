@@ -2,16 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Search Games - Zextoo</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+    .game-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .game-item a {
+      display: block;
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 5px;
+      color: black;
+    }
+  </style>
   <script>
     function searchGames() {
       const input = document.getElementById('searchInput').value.toLowerCase();
       const games = document.querySelectorAll('.game-item');
 
       games.forEach(game => {
-        const name = game.textContent.toLowerCase();
-        game.style.display = name.includes(input) ? 'block' : 'none';
+        const gameName = game.querySelector('a').textContent.toLowerCase();
+        game.style.display = gameName.includes(input) ? 'block' : 'none';
       });
     }
   </script>
